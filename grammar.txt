@@ -1,0 +1,27 @@
+TIPO :  int
+        float
+
+VAR CTE :   id
+            cte i
+            cte f
+
+VARS : var id (,)* : TIPO;
+
+EXPRESION : EXP | EXP (>/</<>) EXP
+
+EXP : TERMINO (+ TERMINO/ - TERMINO)*
+
+TERMINO : FACTOR | FACTOR (+/-) FACTOR
+
+FACTOR  : (EXPRESION)
+        : (+/-)* VAR CTE
+
+ASIGNACION : id = EXPRESION;
+
+ESCRITURA : print ((EXPRESION (,)*/cte.string (,)* ));
+
+CONDICION : if (EXPRESION) BLOQUE (else (BLOQUE)*)*;
+
+BLOQUE : { (ESTATUTO)* }
+
+PROGRAMA : program id : (VARS)* BLOQUE
